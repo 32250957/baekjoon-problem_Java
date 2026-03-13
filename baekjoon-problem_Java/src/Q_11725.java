@@ -1,32 +1,34 @@
 import java.io.*;
 import java.util.*;
 
-class Node1 {
-    int data;
-    List<Node1> list = new ArrayList<>();
-
-    Node1(int data) {
-        this.data = data;
-    }
-}
-
 public class Q_11725 {
+
+    static void BFS(List graph, BufferedWriter wr) throws IOException{
+
+
+    }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        Map<Integer, Node1> map = new HashMap<>();
+        int N  = Integer.parseInt(br.readLine());
 
-        int N = Integer.parseInt(br.readLine());
+        List<Integer>[] graph = new ArrayList[N+1];
 
-        for(int i=0;i<N-1;i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int node1 = Integer.parseInt(st.nextToken());
-            int node2 = Integer.parseInt(st.nextToken());
-
-            if(node1 == 1) {
-                
-            }
+        for(int i=1;i<N+1;i++) {
+            graph[i] = new ArrayList<>();
         }
+
+        for(int i=1;i<N;i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+
+            graph[a].add(b);
+            graph[b].add(a);
+        }
+
+        List<Integer> parents = new ArrayList<>();
+
     }
 }
